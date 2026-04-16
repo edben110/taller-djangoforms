@@ -1,0 +1,129 @@
+{% extends "solicitud/base.html" %}
+
+{% block titulo %}Registrar Solicitud{% endblock %}
+
+{% block contenido %}
+<div class="row justify-content-center">
+    <div class="col-lg-7 col-md-9">
+
+        <div class="text-center mb-4">
+            <i class="bi bi-envelope-paper text-success" style="font-size: 3rem;"></i>
+            <h2 class="mt-2">Registro de Solicitud</h2>
+            <p class="text-muted">Complete todos los campos requeridos y envíe su solicitud.</p>
+        </div>
+
+        <div class="card border-0 shadow rounded-4">
+            <div class="card-body p-4">
+                <form method="post" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.nombre_solicitante.id_for_label }}" class="form-label fw-semibold">
+                                <i class="bi bi-person me-1"></i>{{ form.nombre_solicitante.label }}
+                            </label>
+                            {{ form.nombre_solicitante }}
+                            {% for error in form.nombre_solicitante.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.documento_identidad.id_for_label }}" class="form-label fw-semibold">
+                                <i class="bi bi-card-text me-1"></i>{{ form.documento_identidad.label }}
+                            </label>
+                            {{ form.documento_identidad }}
+                            {% for error in form.documento_identidad.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.correo_electronico.id_for_label }}" class="form-label fw-semibold">
+                                <i class="bi bi-envelope me-1"></i>{{ form.correo_electronico.label }}
+                            </label>
+                            {{ form.correo_electronico }}
+                            {% for error in form.correo_electronico.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.telefono_contacto.id_for_label }}" class="form-label fw-semibold">
+                                <i class="bi bi-telephone me-1"></i>{{ form.telefono_contacto.label }}
+                            </label>
+                            {{ form.telefono_contacto }}
+                            {% for error in form.telefono_contacto.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.tipo_solicitud.id_for_label }}" class="form-label fw-semibold">
+                                <i class="bi bi-list-check me-1"></i>{{ form.tipo_solicitud.label }}
+                            </label>
+                            {{ form.tipo_solicitud }}
+                            {% for error in form.tipo_solicitud.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.fecha_solicitud.id_for_label }}" class="form-label fw-semibold">
+                                <i class="bi bi-calendar-event me-1"></i>{{ form.fecha_solicitud.label }}
+                            </label>
+                            {{ form.fecha_solicitud }}
+                            {% for error in form.fecha_solicitud.errors %}
+                                <div class="text-danger small mt-1">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.asunto.id_for_label }}" class="form-label fw-semibold">
+                            <i class="bi bi-chat-square-text me-1"></i>{{ form.asunto.label }}
+                        </label>
+                        {{ form.asunto }}
+                        {% for error in form.asunto.errors %}
+                            <div class="text-danger small mt-1">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.descripcion_detallada.id_for_label }}" class="form-label fw-semibold">
+                            <i class="bi bi-text-paragraph me-1"></i>{{ form.descripcion_detallada.label }}
+                        </label>
+                        {{ form.descripcion_detallada }}
+                        {% for error in form.descripcion_detallada.errors %}
+                            <div class="text-danger small mt-1">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="{{ form.archivo_adjunto.id_for_label }}" class="form-label fw-semibold">
+                            <i class="bi bi-paperclip me-1"></i>{{ form.archivo_adjunto.label }}
+                        </label>
+                        {{ form.archivo_adjunto }}
+                        {% for error in form.archivo_adjunto.errors %}
+                            <div class="text-danger small mt-1">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success btn-lg rounded-3">
+                            <i class="bi bi-send me-2"></i>Enviar Solicitud
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
