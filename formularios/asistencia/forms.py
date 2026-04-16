@@ -36,6 +36,7 @@ class AsistenciaForm(forms.ModelForm):
             }),
             'presente': forms.CheckboxInput(attrs={
                 'class': 'form-check-input',
+                'role': 'switch',
             }),
             'observaciones': forms.Textarea(attrs={
                 'class': 'form-control',
