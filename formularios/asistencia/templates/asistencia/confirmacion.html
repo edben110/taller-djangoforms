@@ -1,0 +1,21 @@
+{% extends "asistencia/base.html" %}
+
+{% block titulo %}Confirmación{% endblock %}
+
+{% block contenido %}
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+        <div class="card shadow-sm">
+            <div class="card-body py-5">
+                <h2 class="text-success mb-3">¡Registro exitoso!</h2>
+                <p class="text-muted">
+                    La asistencia ha sido registrada correctamente.
+                </p>
+                <a href="{% url 'asistencia:registrar' %}" class="btn btn-primary mt-3">
+                    Registrar otra asistencia
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
