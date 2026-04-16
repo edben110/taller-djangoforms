@@ -1,8 +1,20 @@
-# Databases
-**/db.sqlite3
-**/*.sqlite3
+# Ambiente virtual
+ambiente/
+venv/
 
-# Python cache files
+# IDE
+.vscode/
+.idea/
+
+# Python
+__pycache__/
 **/__pycache__/
-**/*.pyc
-**/*.pyo
+*.pyc
+*.pyo
+
+# Django
+*.sqlite3
+
+# Sistema
+.DS_Store
+Thumbs.db
