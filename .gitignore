@@ -8,6 +8,7 @@ venv/
 
 # Python
 __pycache__/
+**/__pycache__/
 *.pyc
 *.pyo
 
@@ -17,4 +18,3 @@ __pycache__/
 # Sistema
 .DS_Store
 Thumbs.db
-.vscode/ 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud Registrada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #e0f2fe 0%, #ecfeff 100%);
+        }
+
+        .mensaje {
+            text-align: center;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+            padding: 28px;
+            max-width: 580px;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #0f766e;
+        }
+
+        p {
+            color: #374151;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background: #0f766e;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        a:hover {
+            background: #115e59;
+        }
+    </style>
+</head>
+<body>
+    <section class="mensaje">
+        <h1>Solicitud enviada correctamente</h1>
+        <p>Su solicitud fue registrada con exito en el sistema.</p>
+        <a href="{% url 'solicitud:formulario' %}">Registrar otra solicitud</a>
+    </section>
+</body>
+</html>
